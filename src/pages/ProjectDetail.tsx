@@ -107,13 +107,13 @@ export default function ProjectDetail() {
 
           {/* Technical Details */}
           <div className="grid md:grid-cols-2 gap-6 pt-4">
-            {project.camera && (
+            {project.technologies && (
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm font-light tracking-wide uppercase text-muted-foreground">
-                  <Camera className="size-4" />
-                  <span>Camera</span>
+                  <Code className="size-4" />
+                  <span>Technologies</span>
                 </div>
-                <p className="font-light text-foreground">{project.camera}</p>
+                <p className="font-light text-foreground">{project.technologies}</p>
               </div>
             )}
             {project.client && (
