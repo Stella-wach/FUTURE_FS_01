@@ -1,41 +1,35 @@
-import type { PhotographerInfo } from '@/types';
+import type { DeveloperInfo } from '@/types';
 
-export const photographerInfo: PhotographerInfo = {
-  name: 'Sarah Mitchell',
-  tagline: 'Editorial & Commercial Photographer',
-  heroIntroduction: 'Creating visual narratives that capture authentic moments and timeless stories.',
-  biography: `Sarah Mitchell is an award-winning photographer specializing in editorial and commercial work, with recognition including the International Photography Awards Editorial Photographer of the Year 2023 and PDN Photo Annual Winner 2022. With over a decade of experience, her work has been featured in numerous international publications and exhibitions, collaborating with clients such as Vogue, The New York Times, National Geographic, Adobe, Apple, Nike, and Architectural Digest.
+export const photographerInfo: DeveloperInfo = {
+  name: 'Stella Wachira',
+  tagline: 'Full-Stack Software Developer',
+  heroIntroduction: 'Building production-ready applications end-to-end — from database architecture and API design to responsive UIs and payment integrations.',
+  biography: `Full-stack developer with demonstrated ability to ship production-ready applications end-to-end — from database architecture and RESTful API design to responsive UIs and live payment integrations. Built and deployed three complete systems independently, including MPESA STK push payment flows and real-time async API handling.
 
-Based in New York with an MFA in Photography from the School of Visual Arts, Sarah brings a unique perspective to every project, combining technical excellence with artistic vision. Her approach to photography is deeply rooted in storytelling, believing that every image should convey emotion and meaning beyond its visual appeal.`,
-  approach: `My photography is guided by three principles: authenticity, composition, and light. I believe the best images emerge when subjects feel comfortable and genuine, when composition guides the viewer's eye naturally, and when light reveals the essence of the moment.
+Combines a strong technical foundation in JavaScript, PHP, and cloud databases with sharp communication skills from a background in sociology, enabling effective collaboration across technical and non-technical teams. Currently pursuing a Diploma in Software Development at the Institute of Software Technologies, Nairobi, while holding a Bachelor of Arts in Sociology & Communications from the University of Nairobi.`,
+  approach: `My development process is guided by three principles: clean architecture, user experience, and reliability. I believe the best software emerges when code is well-structured and maintainable, when interfaces are intuitive and responsive, and when systems handle edge cases gracefully.
 
-Whether working on editorial assignments or commercial projects, I strive to create images that transcend their immediate purpose and become lasting visual statements.`,
-  awards: [
-    'International Photography Awards - Editorial Photographer of the Year 2023',
-    'PDN Photo Annual - Winner 2022',
-    'Hasselblad Masters Finalist 2021',
-    'Communication Arts Photography Annual 2020'
+Whether working on full-stack applications or frontend projects, I strive to build solutions that are robust, scalable, and deliver real value to users.`,
+  skills: [
+    'React', 'Vue.js', 'HTML5', 'Tailwind CSS',
+    'Node.js', 'Express.js', 'Laravel', 'PHP',
+    'MongoDB', 'MySQL', 'Firebase',
+    'Flutter/Dart',
+    'Git', 'Postman', 'VS Code'
   ],
-  clients: [
-    'Vogue',
-    'The New York Times',
-    'National Geographic',
-    'Adobe',
-    'Apple',
-    'Nike',
-    'Patagonia',
-    'Architectural Digest'
+  certifications: [
+    'Software Development Certificate (2024)',
+    'ICDL Certificate (2021) - IAT Nakuru'
   ],
-  education: 'MFA Photography, School of Visual Arts, New York',
-  location: 'New York, NY',
-  email: 'hello@sarahmitchell.com',
-  phone: '+1 (555) 123-4567',
-  availability: 'Currently booking for Q2 2025',
+  education: 'Diploma in Software Development, Institute of Software Technologies, Nairobi (2025-2026) | BA Sociology & Communications, University of Nairobi (2020-2024)',
+  location: 'Nairobi, Kenya',
+  email: 'wstellawambui@gmail.com',
+  phone: '+254 708653532',
+  availability: 'Available for freelance & full-time opportunities',
   socialLinks: {
-    instagram: 'https://instagram.com/sarahmitchellphoto',
-    linkedin: 'https://linkedin.com/in/sarahmitchell',
-    behance: 'https://behance.net/sarahmitchell'
+    github: 'https://github.com/Stella-wach',
+    linkedin: 'https://www.linkedin.com/in/stella-wachira-1517913a4',
+    portfolio: 'https://portfolio-theta-one-68.vercel.app/'
   },
-  // Photo by Joshua Sun on Unsplash
-  portraitImage: 'https://images.unsplash.com/photo-1585279968680-6606ee6ed134?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MDA2OTF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjI3Njk1NjB8&ixlib=rb-4.1.0&q=80&w=1080'
+  portraitImage: '/src/assets/stella-portrait.jpeg'
 };
