@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Code, User } from 'lucide-react';
+import { Calendar, MapPin, Code, User, ExternalLink, Github } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -126,6 +126,34 @@ export default function ProjectDetail() {
               </div>
             )}
           </div>
+
+          {/* Project Links */}
+          {(project.githubUrl || project.liveUrl) && (
+            <div className="flex flex-wrap gap-4 pt-2">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-full text-sm font-light tracking-wide text-foreground hover:bg-accent transition-colors"
+                >
+                  <Github className="size-4" />
+                  View Source
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-light tracking-wide hover:bg-primary/90 transition-colors"
+                >
+                  <ExternalLink className="size-4" />
+                  Live Demo
+                </a>
+              )}
+            </div>
+          )}
         </motion.div>
       </section>
 
