@@ -54,6 +54,25 @@ export const projects: Project[] = [
       { id: '3-3', src: 'https://images.unsplash.com/photo-1590490360182-c33d955e4c47?auto=format&fit=crop&w=1080&q=80', alt: 'Admin dashboard', aspectRatio: 'landscape' },
       { id: '3-4', src: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1080&q=80', alt: 'Booking confirmation flow', aspectRatio: 'landscape' }
     ]
+  },
+  {
+    id: '4',
+    title: 'Globe App',
+    category: 'mobile',
+    year: '2025',
+    slug: 'globe-app',
+    coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1080&q=80',
+    description: 'A cross-platform e-commerce mobile application built with Flutter and Dart. Features dual dashboards for admin and user roles, M-PESA payment integration for seamless mobile payments, Firebase backend for real-time data synchronization, and Node.js server for payment processing logic.',
+    technologies: 'Flutter, Dart, Firebase, Node.js, M-PESA API',
+    location: 'Nairobi, Kenya',
+    githubUrl: 'https://github.com/Stella-wach',
+    liveUrl: 'https://globe-app-8da95.web.app/',
+    images: [
+      { id: '4-1', src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1080&q=80', alt: 'Globe App e-commerce storefront', aspectRatio: 'landscape' },
+      { id: '4-2', src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1080&q=80', alt: 'Mobile payment integration', aspectRatio: 'landscape' },
+      { id: '4-3', src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1080&q=80', alt: 'Flutter mobile app interface', aspectRatio: 'portrait' },
+      { id: '4-4', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1080&q=80', alt: 'Admin dashboard overview', aspectRatio: 'landscape' }
+    ]
   }
 ];
 

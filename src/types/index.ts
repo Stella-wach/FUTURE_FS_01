@@ -27,6 +27,7 @@ export interface Project {
   location?: string;
   slug: string;
   githubUrl?: string;
+  liveUrl?: string;
 }
 
 export interface DeveloperInfo {
