@@ -25,7 +25,7 @@ export default function Home() {
               alt="Stella Wachira"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
           </div>
 
           <div className="relative h-full flex flex-col items-center justify-center px-6">
