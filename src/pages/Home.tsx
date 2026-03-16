@@ -23,7 +23,7 @@ export default function Home() {
             <img
               src={stellaPortrait}
               alt="Stella Wachira"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
           </div>

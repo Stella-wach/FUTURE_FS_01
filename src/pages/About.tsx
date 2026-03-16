@@ -44,7 +44,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="aspect-[3/4] relative overflow-hidden rounded-sm bg-muted">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-sm bg-muted max-h-[400px]">
                   <img
                     src={stellaPortrait}
                     alt="Stella Wachira"
