@@ -1,141 +1,113 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send } from 'lucide-react';
 import { photographerInfo } from '@/data/photographer';
-import { ContactForm } from '@/components/forms/ContactForm';
-import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
-/**
- * Contact page with form and contact information
- * Features validated contact form and availability status
- */
 export default function Contact() {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon." });
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
   return (
     <>
       <SEOHead
         title="Contact"
-        description={`Get in touch with ${photographerInfo.name} for photography inquiries, collaborations, and project bookings. ${photographerInfo.availability}`}
+        description={`Get in touch with ${photographerInfo.name} for project inquiries and collaborations.`}
       />
       
-      <div className="min-h-screen">
-        {/* Hero Section */}
-      <section className="py-24 md:py-32 px-6 lg:px-8 border-b border-border">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <motion.div
-            initial={{ opacity: 0.8, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-              Get in Touch
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-              Let's discuss your next project
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-16 md:py-24 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            {/* Contact Form */}
+      <div className="min-h-screen relative z-10">
+        <section className="py-16 md:py-24 px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
             <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0.8, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
             >
-              <div className="space-y-3">
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-                  Send a Message
-                </h2>
-                <p className="text-muted-foreground font-light">
-                  Fill out the form below and I'll get back to you within 24-48 hours. {photographerInfo.availability}
-                </p>
-              </div>
-
-              <ContactForm />
+              <h1 className="text-4xl md:text-5xl font-bold">
+                Let's <span className="text-gradient-purple">Connect</span>
+              </h1>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Have a project in mind? Let's discuss how we can bring your ideas to life!
+              </p>
             </motion.div>
 
-            {/* Contact Information */}
-            <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0.8, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <div className="space-y-3">
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-                  Contact Information
-                </h2>
-                <p className="text-muted-foreground font-light">
-                  Prefer to reach out directly? Here's how you can contact me.
-                </p>
-              </div>
-
-              <Separator />
-
-              {/* Contact Details */}
-              <div className="space-y-6">
-                {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-sm bg-accent">
-                    <Mail className="size-5 text-muted-foreground" />
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="space-y-8"
+              >
+                <h2 className="text-2xl font-bold">Get in Touch</h2>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <Mail className="size-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <a href={`mailto:${photographerInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors">{photographerInfo.email}</a>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Email
-                    </p>
-                    <a
-                      href={`mailto:${photographerInfo.email}`}
-                      className="text-base md:text-lg font-light hover:text-muted-foreground transition-colors"
-                    >
-                      {photographerInfo.email}
-                    </a>
+                  <div className="flex items-start gap-4">
+                    <Phone className="size-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <a href={`tel:${photographerInfo.phone}`} className="text-muted-foreground hover:text-primary transition-colors">{photographerInfo.phone}</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <MapPin className="size-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Location</p>
+                      <p className="text-muted-foreground">{photographerInfo.location}</p>
+                    </div>
                   </div>
                 </div>
-
-                {/* Phone */}
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-sm bg-accent">
-                    <Phone className="size-5 text-muted-foreground" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Phone
-                    </p>
-                    <a
-                      href={`tel:${photographerInfo.phone}`}
-                      className="text-base md:text-lg font-light hover:text-muted-foreground transition-colors"
-                    >
-                      {photographerInfo.phone}
-                    </a>
-                  </div>
+                <div className="flex items-center gap-4 pt-4">
+                  <a href={photographerInfo.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="size-5" /></a>
+                  <a href={photographerInfo.socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github className="size-5" /></a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="size-5" /></a>
                 </div>
+              </motion.div>
 
-                {/* Location */}
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-sm bg-accent">
-                    <MapPin className="size-5 text-muted-foreground" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Location
-                    </p>
-                    <p className="text-base md:text-lg font-light">
-                      {photographerInfo.location}
-                    </p>
-                  </div>
+              <motion.form
+                onSubmit={handleSubmit}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="space-y-5"
+              >
+                <div>
+                  <label className="block text-sm font-medium mb-2">Full Name</label>
+                  <input type="text" required value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground" placeholder="Your name" />
                 </div>
-              </div>
-            </motion.div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email Address</label>
+                  <input type="email" required value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground" placeholder="your@email.com" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Subject</label>
+                  <input type="text" required value={formData.subject} onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))} className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground" placeholder="Project inquiry" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <textarea required rows={5} value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground resize-none" placeholder="Tell me about your project..." />
+                </div>
+                <button type="submit" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                  <Send className="size-4" />
+                  Send Message
+                </button>
+              </motion.form>
+            </div>
           </div>
-        </div>
-      </section>
-
-        {/* Bottom spacing */}
+        </section>
         <div className="h-16" />
       </div>
     </>

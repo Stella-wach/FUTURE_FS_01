@@ -1,52 +1,40 @@
-import { Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import { photographerInfo } from '@/data/photographer';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-muted-foreground font-light tracking-wide">
-            © {currentYear} {photographerInfo.name}. All rights reserved.
-          </p>
+    <footer className="relative z-10 border-t border-border py-12 px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto text-center space-y-6">
+        <div className="flex items-center justify-center gap-2 text-lg font-bold">
+          <span className="text-primary">{'</>'}</span>
+          <span className="text-foreground">{photographerInfo.name}</span>
+        </div>
+        
+        <p className="text-muted-foreground text-sm">
+          Software Developer & Creative Thinker
+        </p>
 
-          <div className="flex items-center gap-6">
-            {photographerInfo.socialLinks.github && (
-              <a
-                href={photographerInfo.socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="size-5" />
-              </a>
-            )}
-            {photographerInfo.socialLinks.linkedin && (
-              <a
-                href={photographerInfo.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="size-5" />
-              </a>
-            )}
-            {photographerInfo.socialLinks.portfolio && (
-              <a
-                href={photographerInfo.socialLinks.portfolio}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Portfolio"
-              >
-                <ExternalLink className="size-5" />
-              </a>
-            )}
-          </div>
+        <div className="flex items-center justify-center gap-5">
+          <a href={photographerInfo.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
+            <Linkedin className="size-5" />
+          </a>
+          <a href={photographerInfo.socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+            <Github className="size-5" />
+          </a>
+          <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
+            <Twitter className="size-5" />
+          </a>
+          <a href={`mailto:${photographerInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
+            <Mail className="size-5" />
+          </a>
+        </div>
+
+        <div className="border-t border-border pt-6">
+          <p className="text-xs text-muted-foreground">
+            © {currentYear} {photographerInfo.name}. All rights reserved. Made with ❤️ and lots of ☕
+          </p>
         </div>
       </div>
     </footer>

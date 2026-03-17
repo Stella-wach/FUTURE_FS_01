@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, ExternalLink, Mail, MapPin, GraduationCap, Award } from 'lucide-react';
 import { photographerInfo } from '@/data/photographer';
-import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
 import stellaPortrait from '@/assets/stella-portrait.jpeg';
 
@@ -10,150 +9,133 @@ export default function About() {
     <>
       <SEOHead
         title="About"
-        description={`Learn about ${photographerInfo.name}, ${photographerInfo.tagline}. ${photographerInfo.biography.split('\n\n')[0]}`}
-        image={photographerInfo.portraitImage}
+        description={`Learn about ${photographerInfo.name}, Full-Stack Software Developer based in Nairobi, Kenya.`}
       />
       
-      <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="py-24 md:py-32 px-6 lg:px-8 border-b border-border">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <motion.div
-              initial={{ opacity: 0.8, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-                About
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-                Full-Stack Developer & Problem Solver
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Portrait and Biography */}
+      <div className="min-h-screen relative z-10">
+        {/* Hero */}
         <section className="py-16 md:py-24 px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Image */}
               <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0.8, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex justify-center"
               >
-                <div className="aspect-[4/5] relative overflow-hidden rounded-sm bg-muted max-h-[400px]">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-primary/30 glow-cyan">
                   <img
                     src={stellaPortrait}
                     alt="Stella Wachira"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
-                </div>
-                
-                {/* Social Links */}
-                <div className="flex items-center gap-4">
-                  {photographerInfo.socialLinks.github && (
-                    <a
-                      href={photographerInfo.socialLinks.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 border border-border rounded-sm hover:bg-accent transition-colors"
-                      aria-label="GitHub"
-                    >
-                      <Github className="size-5" />
-                    </a>
-                  )}
-                  {photographerInfo.socialLinks.linkedin && (
-                    <a
-                      href={photographerInfo.socialLinks.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 border border-border rounded-sm hover:bg-accent transition-colors"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin className="size-5" />
-                    </a>
-                  )}
-                  {photographerInfo.socialLinks.portfolio && (
-                    <a
-                      href={photographerInfo.socialLinks.portfolio}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 border border-border rounded-sm hover:bg-accent transition-colors"
-                      aria-label="Portfolio"
-                    >
-                      <ExternalLink className="size-5" />
-                    </a>
-                  )}
                 </div>
               </motion.div>
 
+              {/* Bio */}
               <motion.div
-                className="space-y-8"
-                initial={{ opacity: 0.8, x: 10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-6"
               >
-                <div className="space-y-3">
-                  <h2 className="text-4xl md:text-5xl font-light tracking-wide">
+                <div>
+                  <p className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-2">About Me</p>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-2">
                     {photographerInfo.name}
-                  </h2>
-                  <p className="text-xl text-muted-foreground font-light tracking-wide">
-                    {photographerInfo.tagline}
-                  </p>
+                  </h1>
+                  <p className="text-xl text-muted-foreground">{photographerInfo.tagline}</p>
                 </div>
 
-                <Separator />
-
-                <div className="space-y-4">
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
                   {photographerInfo.biography.split('\n\n').map((paragraph, index) => (
-                    <p
-                      key={index}
-                      className="text-base md:text-lg font-light leading-relaxed text-muted-foreground"
-                    >
-                      {paragraph}
-                    </p>
+                    <p key={index}>{paragraph}</p>
                   ))}
                 </div>
 
-                {/* Technical Skills */}
-                <div className="pt-4 space-y-3">
-                  <h3 className="text-lg font-medium tracking-wide">Technical Skills</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {photographerInfo.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 text-sm font-light border border-border rounded-sm bg-accent/50"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Contact Info */}
-                <div className="pt-4 space-y-2">
-                  <div className="text-sm font-light tracking-wide">
-                    <span className="text-muted-foreground">Email: </span>
-                    <a
-                      href={`mailto:${photographerInfo.email}`}
-                      className="text-foreground hover:text-muted-foreground transition-colors"
-                    >
-                      {photographerInfo.email}
-                    </a>
-                  </div>
-                  <div className="text-sm font-light tracking-wide">
-                    <span className="text-muted-foreground">Location: </span>
-                    <span className="text-foreground">{photographerInfo.location}</span>
-                  </div>
+                <div className="flex items-center gap-4 pt-2">
+                  <a href={photographerInfo.socialLinks.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-secondary hover:bg-primary/20 transition-colors" aria-label="GitHub">
+                    <Github className="size-5" />
+                  </a>
+                  <a href={photographerInfo.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-secondary hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <Linkedin className="size-5" />
+                  </a>
+                  <a href={`mailto:${photographerInfo.email}`} className="p-2 rounded-lg bg-secondary hover:bg-primary/20 transition-colors" aria-label="Email">
+                    <Mail className="size-5" />
+                  </a>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
+
+        {/* Info Cards */}
+        <section className="py-16 px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="p-6 bg-secondary/30 rounded-lg border border-border space-y-3"
+            >
+              <MapPin className="size-6 text-primary" />
+              <h3 className="font-semibold">Location</h3>
+              <p className="text-sm text-muted-foreground">{photographerInfo.location}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="p-6 bg-secondary/30 rounded-lg border border-border space-y-3"
+            >
+              <GraduationCap className="size-6 text-accent" />
+              <h3 className="font-semibold">Education</h3>
+              <p className="text-sm text-muted-foreground">{photographerInfo.education}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="p-6 bg-secondary/30 rounded-lg border border-border space-y-3"
+            >
+              <Award className="size-6 text-amber" />
+              <h3 className="font-semibold">Certifications</h3>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                {photographerInfo.certifications.map((cert, i) => (
+                  <li key={i}>{cert}</li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="py-16 px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8">
+              Technical <span className="text-gradient-cyan">Skills</span>
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {photographerInfo.skills.map((skill) => (
+                <motion.span
+                  key={skill}
+                  whileHover={{ scale: 1.05 }}
+                  className="px-4 py-2 text-sm font-medium bg-secondary/50 border border-border rounded-lg hover:border-primary/30 transition-colors"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="h-16" />
       </div>
     </>
   );
