@@ -3,12 +3,7 @@ import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { motion } from 'framer-motion';
 
-/**
- * Portfolio page with masonry grid
- * Features smooth animations and responsive layout
- */
 export default function Portfolio() {
-
   return (
     <>
       <SEOHead 
@@ -16,32 +11,31 @@ export default function Portfolio() {
         description="Browse my complete portfolio featuring full-stack, frontend, backend, and mobile development projects."
       />
       
-      <div className="min-h-screen">
-        {/* Hero Section */}
-      <section className="relative py-24 md:py-32 px-6 lg:px-8 border-b border-border">
-        <div className="max-w-7xl mx-auto text-center space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-              Portfolio
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
+      <div className="min-h-screen relative z-10">
+        <section className="py-16 md:py-24 px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto text-center space-y-4 mb-12">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold"
+            >
+              My <span className="text-gradient-purple">Projects</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg text-muted-foreground"
+            >
               A curated collection of software development projects
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            </motion.p>
+          </div>
 
-      {/* Portfolio Grid - Edge to edge */}
-      <section className="py-12 md:py-16 px-2 md:px-4">
-        <PortfolioGrid projects={projects} />
-      </section>
+          <PortfolioGrid projects={projects} />
+        </section>
 
-        {/* Bottom spacing */}
-        <div className="h-24" />
+        <div className="h-16" />
       </div>
     </>
   );
