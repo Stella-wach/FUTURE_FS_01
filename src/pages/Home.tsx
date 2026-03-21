@@ -145,11 +145,21 @@ export default function Home() {
                     />
                   </div>
 
+                  {/* Rotating Robot */}
+                  <motion.div
+                    animate={{ rotateY: 360 }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                    style={{ perspective: 800 }}
+                    className="absolute -top-6 -right-6 text-6xl cursor-pointer select-none"
+                  >
+                    🤖
+                  </motion.div>
+                  
                   {/* Floating accent icons */}
                   <motion.div
                     animate={{ y: [-5, 5, -5] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-2 -right-2 w-12 h-12 rounded-full bg-amber flex items-center justify-center text-primary-foreground font-bold text-lg"
+                    className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-amber flex items-center justify-center text-primary-foreground font-bold text-lg"
                   >
                     {'</>'}
                   </motion.div>
