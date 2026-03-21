@@ -8,6 +8,7 @@ import { SkillsGrid } from '@/components/sections/SkillsGrid';
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { ContactSection } from '@/components/sections/ContactSection';
 import stellaPortrait from '@/assets/stella-portrait.jpeg';
+import robotGif from '@/assets/robot.gif';
 
 const socialLinks = [
   { icon: Linkedin, href: photographerInfo.socialLinks.linkedin, label: 'LinkedIn' },
