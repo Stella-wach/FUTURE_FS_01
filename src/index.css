@@ -167,29 +167,29 @@
   }
 
   .text-gradient-cyan {
-    background: linear-gradient(135deg, hsl(187 80% 55%), hsl(200 80% 65%));
+    background: linear-gradient(135deg, hsl(190 85% 50%), hsl(200 80% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-purple {
-    background: linear-gradient(135deg, hsl(260 60% 60%), hsl(280 60% 70%));
+    background: linear-gradient(135deg, hsl(265 60% 55%), hsl(280 60% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glow-cyan {
-    box-shadow: 0 0 20px hsl(187 80% 55% / 0.3), 0 0 60px hsl(187 80% 55% / 0.1);
+    box-shadow: 0 0 20px hsl(190 85% 50% / 0.3), 0 0 60px hsl(190 85% 50% / 0.1);
   }
 
   .glow-purple {
-    box-shadow: 0 0 20px hsl(260 60% 60% / 0.3), 0 0 60px hsl(260 60% 60% / 0.1);
+    box-shadow: 0 0 20px hsl(265 60% 55% / 0.3), 0 0 60px hsl(265 60% 55% / 0.1);
   }
 
   .border-glow-cyan {
-    border: 2px solid hsl(187 80% 55% / 0.3);
-    box-shadow: 0 0 15px hsl(187 80% 55% / 0.1), inset 0 0 15px hsl(187 80% 55% / 0.05);
+    border: 2px solid hsl(190 85% 50% / 0.4);
+    box-shadow: 0 0 20px hsl(190 85% 50% / 0.15), 0 0 60px hsl(265 60% 55% / 0.1), inset 0 0 20px hsl(190 85% 50% / 0.05);
   }
 }
