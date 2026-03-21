@@ -137,30 +137,22 @@ export default function Home() {
                   {/* Glow ring */}
                   <div className="absolute inset-0 rounded-full border-glow-cyan scale-110" />
                   
-                  {/* Image container */}
+                  {/* Image container with robot */}
                   <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/30">
-                    <img
-                      src={stellaPortrait}
-                      alt="Stella Wachira"
-                      className="w-full h-full object-cover object-top"
+                    <motion.img
+                      src={robotGif}
+                      alt="3D Robot"
+                      className="w-full h-full object-contain"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     />
                   </div>
 
-                  {/* Rotating Robot */}
-                  <motion.div
-                    animate={{ rotateY: 360 }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                    style={{ perspective: 800 }}
-                    className="absolute -top-6 -right-6 text-6xl cursor-pointer select-none"
-                  >
-                    🤖
-                  </motion.div>
-                  
                   {/* Floating accent icons */}
                   <motion.div
                     animate={{ y: [-5, 5, -5] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-amber flex items-center justify-center text-primary-foreground font-bold text-lg"
+                    className="absolute -top-2 -right-2 w-12 h-12 rounded-full bg-amber flex items-center justify-center text-primary-foreground font-bold text-lg"
                   >
                     {'</>'}
                   </motion.div>
