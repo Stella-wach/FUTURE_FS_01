@@ -3,10 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Code, User, ExternalLink, Github } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { getProjectBySlug } from '@/data/projects';
-import { ImageWithLightbox } from '@/components/portfolio/ImageWithLightbox';
-import { Lightbox } from '@/components/portfolio/Lightbox';
 
 /**
  * Project detail page with hero image, gallery, and full-screen lightbox
