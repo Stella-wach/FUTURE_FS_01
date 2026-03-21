@@ -4,41 +4,40 @@
 /* Stella Wachira Portfolio - Dark Cosmic Theme */
 
 :root {
-  --background: hsl(225 30% 7%);
+  --background: hsl(230 35% 5%);
   --foreground: hsl(210 40% 98%);
-  --card: hsl(225 25% 10%);
+  --card: hsl(230 30% 9%);
   --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(225 25% 10%);
+  --popover: hsl(230 30% 9%);
   --popover-foreground: hsl(210 40% 98%);
-  --primary: hsl(190 85% 50%);
-  --primary-foreground: hsl(225 30% 7%);
-  --secondary: hsl(225 25% 13%);
+  --primary: hsl(230 80% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(230 30% 12%);
   --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(225 20% 15%);
-  --muted-foreground: hsl(215 20% 55%);
-  --accent: hsl(265 60% 55%);
+  --muted: hsl(230 25% 14%);
+  --muted-foreground: hsl(220 20% 55%);
+  --accent: hsl(270 70% 55%);
   --accent-foreground: hsl(210 40% 98%);
   --destructive: hsl(0 84% 60%);
   --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(225 20% 16%);
-  --input: hsl(225 20% 16%);
-  --ring: hsl(190 85% 50%);
+  --border: hsl(230 25% 15%);
+  --input: hsl(230 25% 15%);
+  --ring: hsl(250 80% 60%);
   --radius: 0.5rem;
 
-  /* Custom accent colors */
-  --cyan: hsl(190 85% 50%);
-  --purple: hsl(265 60% 55%);
+  --cyan: hsl(210 90% 55%);
+  --purple: hsl(270 70% 55%);
   --amber: hsl(38 92% 50%);
   --green: hsl(142 70% 45%);
 
-  --sidebar-background: hsl(225 30% 7%);
+  --sidebar-background: hsl(230 35% 5%);
   --sidebar-foreground: hsl(210 40% 98%);
-  --sidebar-primary: hsl(190 85% 50%);
-  --sidebar-primary-foreground: hsl(225 30% 7%);
-  --sidebar-accent: hsl(225 25% 13%);
+  --sidebar-primary: hsl(230 80% 60%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(230 30% 12%);
   --sidebar-accent-foreground: hsl(210 40% 98%);
-  --sidebar-border: hsl(225 20% 16%);
-  --sidebar-ring: hsl(190 85% 50%);
+  --sidebar-border: hsl(230 25% 15%);
+  --sidebar-ring: hsl(250 80% 60%);
 }
 
 .dark {
