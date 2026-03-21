@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Code, User, ExternalLink, Github } from 'lucide-react';
