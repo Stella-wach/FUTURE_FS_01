@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { VariantProps, cva } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
 
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -27,7 +27,7 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b";
   toggleSidebar: () => void;
 };
 
-const SidebarContext = React.createContext<SidebarContext | null>(null);
+const SidebarContext = React.createContext(null);
 
 function useSidebar() {
   const context = React.useContext(SidebarContext);
@@ -210,7 +210,7 @@ const Sidebar = React.forwardRef & {
 });
 Sidebar.displayName = "Sidebar";
 
-const SidebarTrigger = React.forwardRef, React.ComponentProps<typeof Button>>(
+const SidebarTrigger = React.forwardRef, React.ComponentProps>(
   ({ className, onClick, ...props }, ref) => {
     const { toggleSidebar } = useSidebar();
 
@@ -278,7 +278,7 @@ const SidebarInset = React.forwardRef>(({ className, ...props }, ref) => {
 });
 SidebarInset.displayName = "SidebarInset";
 
-const SidebarInput = React.forwardRef, React.ComponentProps<typeof Input>>(
+const SidebarInput = React.forwardRef, React.ComponentProps>(
   ({ className, ...props }, ref) => {
     return (
       <Input
@@ -305,7 +305,7 @@ const SidebarFooter = React.forwardRef>(({ className, ...props }, ref) => {
 });
 SidebarFooter.displayName = "SidebarFooter";
 
-const SidebarSeparator = React.forwardRef, React.ComponentProps<typeof Separator>>(
+const SidebarSeparator = React.forwardRef, React.ComponentProps>(
   ({ className, ...props }, ref) => {
     return (
       <Separator
@@ -430,7 +430,7 @@ const sidebarMenuButtonVariants = cva(
 const SidebarMenuButton = React.forwardRef & {
     asChild?: boolean;
     isActive?: boolean;
-    tooltip?: string | React.ComponentProps<typeof TooltipContent>;
+    tooltip?: string | React.ComponentProps;
   }
 >(({ asChild = false, isActive = false, variant = "default", size = "default", tooltip, className, ...props }, ref) => {
   const Comp = asChild ? Slot : "button";

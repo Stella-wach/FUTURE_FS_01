@@ -10,14 +10,14 @@ import { Button } from "@/components/ui/button";
   setApi?: (api: CarouselApi) => void;
 };
 
-  api: ReturnType<typeof useEmblaCarousel>[1];
+  api: ReturnType[1];
   scrollPrev: () => void;
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
 } & CarouselProps;
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null);
+const CarouselContext = React.createContext(null);
 
 function useCarousel() {
   const context = React.useContext(CarouselContext);

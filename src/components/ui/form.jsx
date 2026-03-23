@@ -15,7 +15,7 @@ type FormFieldContextValue<
   name: TName;
 };
 
-const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
+const FormFieldContext = React.createContext({} as FormFieldContextValue);
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
@@ -55,7 +55,7 @@ const useFormField = () => {
 
 };
 
-const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
+const FormItemContext = React.createContext({} as FormItemContextValue);
 
 const FormItem = React.forwardRef>(
   ({ className, ...props }, ref) => {
@@ -77,7 +77,7 @@ const FormLabel = React.forwardRef((({ className, ...props }, ref) => {
 });
 FormLabel.displayName = "FormLabel";
 
-const FormControl = React.forwardRef, React.ComponentPropsWithoutRef<typeof Slot>>(
+const FormControl = React.forwardRef((
   ({ ...props }, ref) => {
     const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 

@@ -12,7 +12,7 @@ const THEMES = { light: "", dark: ".dark" };
 
 };
 
-const ChartContext = React.createContext<ChartContextProps | null>(null);
+const ChartContext = React.createContext(null);
 
 function useChart() {
   const context = React.useContext(ChartContext);
