@@ -35,7 +35,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="min-h-screen flex items-center px-6 lg:px-8 pt-20 pb-16">
           <div className="max-w-7xl mx-auto w-full">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
               {/* Left - Text Content */}
               <div className="space-y-8">
                 <motion.p custom={0} initial="hidden" animate="visible" variants={fadeUp}

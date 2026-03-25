@@ -18,9 +18,7 @@ export function Footer() {
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="size-5" /></a>
           <a href={`mailto:${photographerInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email"><Mail className="size-5" /></a>
         </div>
-        <div className="border-t border-border pt-6">
-          <p className="text-xs text-muted-foreground">© {currentYear} {photographerInfo.name}. All rights reserved. Made with ❤️ and lots of ☕</p>
-        </div>
+        
       </div>
     </footer>
   );
