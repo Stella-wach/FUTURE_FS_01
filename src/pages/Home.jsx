@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <SEOHead />
-      
+
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center px-6 lg:px-8 pt-20 pb-16">
@@ -55,7 +55,7 @@ export default function Home() {
 
                 <motion.p custom={3} initial="hidden" animate="visible" variants={fadeUp}
                   className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  I craft beautiful, responsive web experiences that bring ideas to life. 
+                  I craft beautiful, responsive web experiences that bring ideas to life.
                   Passionate about clean code, user-centered design, and cutting-edge technologies.
                 </motion.p>
 
@@ -80,6 +80,13 @@ export default function Home() {
                       <social.icon className="size-5" />
                     </a>
                   ))}
+                  {/* Discreet admin access — only you know this is here */}
+                  <Link
+                    to="/admin/login"
+                    className="text-muted-foreground/20 hover:text-muted-foreground/60 transition-colors duration-300 text-xs ml-2"
+                    title="Admin">
+                    ⚙
+                  </Link>
                 </motion.div>
               </div>
 

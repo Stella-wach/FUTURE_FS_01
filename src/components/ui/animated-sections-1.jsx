@@ -342,3 +342,6 @@ useEffect(() => {
 };
 
 export default AnimatedSections;
+
+
+

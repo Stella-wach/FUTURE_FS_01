@@ -38,6 +38,6 @@ export const deleteProject = (id) =>
   request(`/projects/${id}`, { method: 'DELETE' });
 
 // Contact submissions
-export const fetchContacts = () => request('/contacts');
+export const fetchContacts = () => request('/contact');
 export const submitContact = (data) =>
-  request('/contacts', { method: 'POST', body: JSON.stringify(data) });
+  request('/contact', { method: 'POST', body: JSON.stringify(data) });

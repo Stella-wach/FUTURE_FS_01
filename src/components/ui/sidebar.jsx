@@ -210,7 +210,7 @@ const Sidebar = React.forwardRef & {
 });
 Sidebar.displayName = "Sidebar";
 
-const SidebarTrigger = React.forwardRef((
+const SidebarTrigger = React.forwardRef(
   ({ className, onClick, ...props }, ref) => {
     const { toggleSidebar } = useSidebar();
 
@@ -278,7 +278,7 @@ const SidebarInset = React.forwardRef>(({ className, ...props }, ref) => {
 });
 SidebarInset.displayName = "SidebarInset";
 
-const SidebarInput = React.forwardRef((
+const SidebarInput = React.forwardRef(
   ({ className, ...props }, ref) => {
     return (
       <Input
@@ -305,7 +305,7 @@ const SidebarFooter = React.forwardRef>(({ className, ...props }, ref) => {
 });
 SidebarFooter.displayName = "SidebarFooter";
 
-const SidebarSeparator = React.forwardRef((
+const SidebarSeparator = React.forwardRef(
   ({ className, ...props }, ref) => {
     return (
       <Separator
@@ -621,3 +621,6 @@ export {
   SidebarTrigger,
   useSidebar,
 };
+
+
+
