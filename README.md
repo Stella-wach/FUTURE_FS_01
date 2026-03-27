@@ -1,77 +1,171 @@
-# Welcome to your Lovable project
+# Stella Wachira — Portfolio
 
-## Project info
+A modern, full-stack developer portfolio built with React.js and Node.js, featuring a project showcase, contact form, and a secure admin panel for content management.
 
-**URL**: https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae
+ **Live Demo**: [https://future-fs-01-navy-alpha.vercel.app/]   **GitHub**: [https://github.com/Stella-wach/FUTURE_FS_01](https://github.com/Stella-wach/FUTURE_FS_01)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Responsive, animated portfolio with dark/light mode
+- Projects showcase with category filtering and detail pages
+- Contact form with MongoDB storage
+- Secure admin panel to add, edit, and delete projects
+- JWT-based authentication for admin access
+- Skills section, About page, and CV download
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+### Frontend
+| Technology | Purpose |
+|---|---|
+| React.js | UI framework |
+| Vite | Build tool |
+| Tailwind CSS | Styling |
+| Framer Motion | Animations |
+| React Router DOM | Navigation |
+| Shadcn/UI + Radix UI | UI components |
+| TanStack Query | Data fetching |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend
+| Technology | Purpose |
+|---|---|
+| Node.js | Runtime |
+| Express.js | Server framework |
+| MongoDB + Mongoose | Database |
+| JWT | Authentication |
+| Bcryptjs | Password hashing |
+| CORS | Cross-origin requests |
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Projects Featured
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Project | Stack | Links |
+|---|---|---|
+| Event App System | React, Node.js, MongoDB, M-PESA | [GitHub](https://github.com/Stella-wach/Event-Project.git) · [Live](https://quickeventsfrontend.vercel.app/) |
+| Weather App | HTML5, Tailwind CSS, JavaScript, OpenWeatherMap API | [GitHub](https://github.com/Stella-wach/Weather-App.git) · [Live](https://weather-app-eight-psi-93.vercel.app/) |
+| Hotel Booking System | Laravel, PHP, MySQL, M-PESA | [GitHub](https://github.com/Stella-wach/Hotel-Booking-System.git) |
+| Globe App | Flutter, Dart, Firebase, M-PESA | [GitHub](https://github.com/Stella-wach/Go-Cart_Flutter.git) · [Live](https://globe-app-8da95.web.app/) |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Prerequisites
+- Node.js v18+
+- MongoDB (local or Atlas)
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/Stella-wach/FUTURE_FS_01.git
+cd FUTURE_FS_01
 ```
 
-**Edit a file directly in GitHub**
+### 2. Setup the frontend
+```bash
+npm install
+npm run dev
+```
+Frontend runs on `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Setup the backend
+```bash
+cd backend
+npm install
+```
 
-**Use GitHub Codespaces**
+Create a `.env` file in the `backend/` folder:
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/Portfolio
+JWT_SECRET=your_secret_key_here
+ADMIN_EMAIL=your@email.com
+ADMIN_PASSWORD=yourpassword
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Start the backend:
+```bash
+npm run dev
+```
+Backend runs on `http://localhost:5000`
 
-## What technologies are used for this project?
+### 4. Create your admin account (run once)
+```bash
+curl -X POST http://localhost:5000/api/auth/seed
+```
 
-This project is built with:
+### 5. Access the admin panel
+Go to `http://localhost:8080` and click the subtle ⚙ icon next to the social links, or navigate directly to `/admin/login`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## API Endpoints
 
-Simply open [Lovable](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and click on Share -> Publish.
+### Auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/login` | Admin login |
+| POST | `/api/auth/seed` | Create admin account (run once) |
 
-## Can I connect a custom domain to my Lovable project?
+### Projects
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| GET | `/api/projects` | Get all projects | Public |
+| POST | `/api/projects` | Add new project | Admin only |
+| PUT | `/api/projects/:id` | Update project | Admin only |
+| DELETE | `/api/projects/:id` | Delete project | Admin only |
 
-Yes, you can!
+### Contact
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/contact` | Submit contact form |
+| GET | `/api/contact` | Get all messages |
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Folder Structure
+```
+FUTURE_FS_01/
+├── src/                    # Frontend React app
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Page components
+│   ├── contexts/           # Auth context
+│   ├── services/           # API service layer
+│   ├── data/               # Local project data
+│   ├── hooks/              # Custom hooks
+│   └── assets/             # Images and static files
+├── backend/                # Express.js API
+│   └── src/
+│       ├── controllers/    # Route handlers
+│       ├── models/         # MongoDB schemas
+│       ├── routes/         # API routes
+│       └── middleware/     # Auth middleware
+├── public/                 # Static assets
+└── package.json            # Frontend dependencies
+```
 
-# ./tailwind-plus folder:
+---
 
-The tailwind-plus folder contains tailwind components and themes to be used as inspiration for the project. DO NOT REMOVE THE FOLDER UNLESS SPECIFICALLY TOLD TO DO SO
+## Deployment
+
+- **Frontend**: Deploy to Vercel — connect your GitHub repo and set root directory to `/`
+- **Backend**: Deploy to Render — set root directory to `backend/`, add environment variables
+- **Database**: Use MongoDB Atlas for production
+
+---
+
+## Author
+
+**Stella Wachira**  
+Full-Stack Software Developer · Nairobi, Kenya  
+[GitHub](https://github.com/Stella-wach) · [LinkedIn](https://linkedin.com/in/stella-wachira) · wstellawambui@gmail.com
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
